@@ -74,13 +74,15 @@ class _OnboardState extends State<Onboard> {
                   );
                 }),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              contents.length,
-              (index) => buildDot(index, context),
+          Column(children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                contents.length,
+                (index) => buildDot(index, context),
+              ),
             ),
-          ),
+          ]),
           GestureDetector(
             onTap: () {
               if (currentIndex == contents.length - 1) {
